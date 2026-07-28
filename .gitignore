@@ -1,0 +1,16 @@
+.DS_Store
+*.apk
+*.apks
+*.apkm
+*.xapk
+*.obb
+*.wad
+*.so
+*.so.*
+*.log
+gamefiles/
+gamedata/
+userdata/
+logs/
+private-music-extraction/
+PROVENANCE.txt
