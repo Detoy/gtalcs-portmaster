@@ -102,3 +102,10 @@ No Rockstar game files are included or hosted here.
 
 The helpers are intended only for files from a user's own legally obtained
 installation.
+
+## License
+
+The original software and documentation in this repository are available
+under the [MIT License](LICENSE). The licence does not grant rights to
+Rockstar Games, Take-Two Interactive, their trademarks, or any third-party
+game files and assets.
