@@ -1,8 +1,10 @@
 # GTA: Liberty City Stories — PortMaster
 
+[![Latest release](https://img.shields.io/github/v/release/Detoy/gtalcs-portmaster)](https://github.com/Detoy/gtalcs-portmaster/releases/latest)
 ![Platform](https://img.shields.io/badge/platform-PortMaster-6f42c1)
 ![Architecture](https://img.shields.io/badge/architecture-AArch64-1f6feb)
-![Game files](https://img.shields.io/badge/game%20files-not%20included-success)
+[![License](https://img.shields.io/badge/license-MIT-success)](LICENSE)
+![Game files](https://img.shields.io/badge/game%20files-not%20included-informational)
 
 An unofficial, community-tested PortMaster compatibility port of the Android
 release of **Grand Theft Auto: Liberty City Stories** for AArch64 handhelds.
@@ -12,7 +14,7 @@ files from your own legally purchased Android copy.
 
 ## What works
 
-- Full interactive gameplay with sound effects and radio
+- Interactive gameplay with sound effects and radio
 - Autosave and manual saves across restarts
 - PlayStation-position face-button layout
 - Tested first mission with smooth performance
@@ -20,7 +22,8 @@ files from your own legally purchased Android copy.
 
 ## Install
 
-1. Download `gtalcs.zip` from [Releases](../../releases/latest).
+1. Download `gtalcs.zip` from the
+   [latest release](https://github.com/Detoy/gtalcs-portmaster/releases/latest).
 2. Install the ZIP through PortMaster.
 3. Copy these files from your legitimate Android **2.4.379 ARM64** installation
    into `roms/ports/gtalcs/gamedata/`:
@@ -42,10 +45,11 @@ before launching:
   /path/to/SD/roms/ports/gtalcs/gamefiles
 ```
 
-### Radio music from a rooted phone
+### Secondary audio from a rooted phone
 
-Run this on a computer with Android platform tools installed and the rooted
-phone connected:
+LCS stores its secondary audio/radio pack (`data_music.wad`) in protected app
+storage. Run this on a computer with Android platform tools installed and the
+rooted phone connected:
 
 ```bash
 LCS_CONFIRM_OWNERSHIP=yes \
@@ -55,6 +59,12 @@ LCS_CONFIRM_OWNERSHIP=yes \
 
 Launch the port again after extraction. Never upload or redistribute
 `data_music.wad`.
+
+## Requirements
+
+- AArch64 PortMaster handheld
+- Legally purchased GTA:LCS Android 2.4.379 ARM64 installation
+- Approximately 1.7 GB free for extracted game data, plus the source APK files
 
 ## Controls
 
@@ -71,7 +81,9 @@ Press **Start + Back/Select** to leave the game.
 
 ## Support
 
-Open a [bug report](../../issues/new?template=bug_report.yml) with:
+Open a
+[bug report](https://github.com/Detoy/gtalcs-portmaster/issues/new?template=bug_report.yml)
+with:
 
 - exact handheld model and RAM;
 - firmware/CFW name and version;

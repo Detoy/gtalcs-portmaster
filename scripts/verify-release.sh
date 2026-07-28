@@ -5,7 +5,7 @@ set -euo pipefail
 ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd -P)
 ARCHIVE="$ROOT/gtalcs.zip"
 
-for tool in awk bash grep mktemp rm sed unzip; do
+for tool in awk bash cmp grep mktemp rm sed unzip; do
     command -v "$tool" >/dev/null 2>&1 || {
         echo "Missing required verification tool: $tool" >&2
         exit 1
@@ -56,5 +56,17 @@ trap 'rm -rf -- "$temporary"' EXIT
 unzip -q "$ARCHIVE" -d "$temporary"
 bash -n "$temporary/Grand Theft Auto Liberty City Stories.sh" \
     "$temporary/gtalcs/setup.sh" "$temporary/gtalcs/audio.sh"
+cmp -s "$ROOT/LICENSE" "$temporary/gtalcs/licenses/MIT.txt" || {
+    echo "Packaged MIT licence does not match repository LICENSE." >&2
+    exit 1
+}
+cmp -s "$ROOT/VERSION" "$temporary/gtalcs/VERSION" || {
+    echo "Packaged version does not match repository VERSION." >&2
+    exit 1
+}
+[ -s "$temporary/gtalcs/licenses/game-data-notice.txt" ] || {
+    echo "Packaged third-party game-data notice is missing." >&2
+    exit 1
+}
 
 echo "GTA:LCS public release verification: PASS"
